@@ -1,0 +1,20 @@
+.site-footer{
+  ul{
+    li{
+      display: inline-block;
+      font-size: 1rem;
+      line-height: 1.25;
+      color: $c_blue100;
+      transition: all .3s cubic-bezier(0.11, 0.7, 0, 1);
+      position: relative;
+      a{
+        display: block;
+        padding: 8px 10px;
+        position: relative;
+      }
+      &:hover,&.current-menu-item{
+        color: $c_blue400;
+      }
+    }
+  }
+}

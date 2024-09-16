@@ -1,0 +1,1039 @@
+body{
+  font-size: 18px;
+  font-family: 'Ubuntu',sans-serif;
+  font-weight: normal;
+  line-height: 1.25;
+  background-color: #ffffff;
+  &.admin-bar{
+    .site-header{
+      top: 30px;
+    }
+  }
+  &.pushed {
+    overflow: hidden;
+  }
+}
+.home-slider{
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease;
+  -webkit-transition: opacity 1s ease;
+  &.slick-initialized{
+    visibility: visible;
+    opacity: 1;
+    &:before{
+      content: '';
+      position: absolute;
+      right: 1.125rem;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      opacity: .9;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      max-width: 100%;
+      background-position: right;
+      background-image: url("data:image/svg+xml,%0A%3Csvg width='671' height='600' viewBox='0 0 671 600' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg style='mix-blend-mode:multiply'%3E%3Cpath d='M566.548 410.725C564.976 410.725 563.413 410.765 561.858 410.836C583.622 368.701 594.946 321.955 594.876 274.532C594.876 150.852 519.356 44.8116 411.916 0H183.17C75.7296 44.8128 0.209686 150.851 0.209686 274.532C0.209686 438.743 133.33 571.864 297.542 571.864C356.556 571.958 414.25 554.406 463.214 521.464C464.292 537.121 468.917 552.327 476.738 565.933C484.56 579.54 495.373 591.189 508.36 600H624.741C638.731 590.511 650.184 577.738 658.096 562.799C666.009 547.86 670.14 531.209 670.129 514.304C670.127 457.099 623.754 410.725 566.548 410.725ZM297.543 450.898C200.138 450.898 121.176 371.935 121.176 274.53C121.176 177.125 200.136 98.1648 297.543 98.1648C394.95 98.1648 473.912 177.128 473.912 274.53C473.912 371.932 394.948 450.898 297.543 450.898ZM566.548 575.744C554.396 575.744 542.517 572.14 532.414 565.389C522.31 558.638 514.435 549.042 509.785 537.816C505.135 526.589 503.918 514.235 506.289 502.317C508.659 490.399 514.511 479.451 523.103 470.859C531.696 462.266 542.643 456.415 554.562 454.044C566.48 451.673 578.833 452.89 590.06 457.54C601.287 462.191 610.882 470.066 617.633 480.169C624.384 490.273 627.988 502.152 627.988 514.304C627.988 530.599 621.515 546.226 609.993 557.748C598.47 569.271 582.843 575.744 566.548 575.744Z' fill='%2300A3C3'/%3E%3C/g%3E%3Cpath opacity='0.85' d='M566.548 410.725C564.976 410.725 563.413 410.765 561.858 410.836C583.622 368.701 594.946 321.955 594.876 274.532C594.876 150.852 519.356 44.8116 411.916 0H183.17C75.7296 44.8128 0.209686 150.851 0.209686 274.532C0.209686 438.743 133.33 571.864 297.542 571.864C356.556 571.958 414.25 554.406 463.214 521.464C464.292 537.121 468.917 552.327 476.738 565.933C484.56 579.54 495.373 591.189 508.36 600H624.741C638.731 590.511 650.184 577.738 658.096 562.799C666.009 547.86 670.14 531.209 670.129 514.304C670.127 457.099 623.754 410.725 566.548 410.725ZM297.543 450.898C200.138 450.898 121.176 371.935 121.176 274.53C121.176 177.125 200.136 98.1648 297.543 98.1648C394.95 98.1648 473.912 177.128 473.912 274.53C473.912 371.932 394.948 450.898 297.543 450.898ZM566.548 575.744C554.396 575.744 542.517 572.14 532.414 565.389C522.31 558.638 514.435 549.042 509.785 537.816C505.135 526.589 503.918 514.235 506.289 502.317C508.659 490.399 514.511 479.451 523.103 470.859C531.696 462.266 542.643 456.415 554.562 454.044C566.48 451.673 578.833 452.89 590.06 457.54C601.287 462.191 610.882 470.066 617.633 480.169C624.384 490.273 627.988 502.152 627.988 514.304C627.988 530.599 621.515 546.226 609.993 557.748C598.47 569.271 582.843 575.744 566.548 575.744Z' fill='%2300A3C3'/%3E%3Cpath d='M328.782 501.329C328.993 503.456 328.854 505.603 328.371 507.686C327.955 509.444 327.234 511.116 326.241 512.625C325.318 514.009 324.13 515.197 322.744 516.118C321.366 517.033 319.84 517.701 318.233 518.093C318.414 518.902 318.875 519.621 319.535 520.123C320.268 520.687 321.086 521.131 321.958 521.437C322.953 521.79 323.98 522.041 325.025 522.186C326.136 522.346 327.214 522.457 328.258 522.52L327.847 525.092C326.71 524.977 325.48 524.819 324.157 524.617C322.858 524.42 321.585 524.085 320.357 523.617C319.187 523.177 318.102 522.535 317.152 521.722C316.202 520.887 315.522 519.789 315.199 518.566C313.356 518.669 311.51 518.428 309.754 517.858C308.027 517.296 306.441 516.372 305.1 515.147C303.666 513.812 302.512 512.204 301.706 510.418C300.753 508.296 300.188 506.02 300.039 503.698C299.799 501.344 299.995 498.966 300.618 496.684C301.15 494.765 302.071 492.977 303.324 491.43C304.504 489.996 305.98 488.835 307.65 488.024C311.099 486.374 315.034 486.049 318.706 487.112C320.487 487.639 322.132 488.543 323.532 489.764C325.02 491.085 326.222 492.698 327.061 494.503C328.049 496.654 328.633 498.967 328.782 501.329ZM325.599 501.592C325.47 499.709 325.047 497.859 324.345 496.108C323.748 494.62 322.864 493.263 321.745 492.115C320.697 491.058 319.42 490.257 318.012 489.774C314.951 488.808 311.633 489.081 308.77 490.534C307.461 491.241 306.333 492.241 305.472 493.454C304.556 494.77 303.907 496.253 303.561 497.819C302.799 501.53 303.117 505.382 304.476 508.918C305.073 510.406 305.957 511.763 307.076 512.911C308.127 513.97 309.404 514.778 310.81 515.274C312.324 515.767 313.921 515.954 315.508 515.823C317.095 515.693 318.64 515.248 320.053 514.514C321.359 513.794 322.486 512.788 323.349 511.571C324.266 510.255 324.915 508.772 325.26 507.206C325.667 505.364 325.782 503.469 325.6 501.592H325.599Z' fill='white'/%3E%3Cpath d='M356.026 510.779C355.235 511.188 354.162 511.687 352.805 512.276C351.153 512.954 349.438 513.468 347.685 513.81C346.255 514.158 344.769 514.209 343.318 513.961C342.149 513.738 341.056 513.219 340.143 512.455C339.213 511.643 338.468 510.64 337.958 509.515C337.351 508.201 336.899 506.82 336.613 505.4L333.955 492.81L336.776 492.214L339.242 503.892C339.506 505.251 339.908 506.58 340.442 507.857C340.818 508.783 341.396 509.614 342.134 510.288C342.793 510.856 343.603 511.221 344.464 511.338C345.505 511.46 346.559 511.399 347.578 511.157C348.742 510.923 349.887 510.605 351.005 510.206C351.625 510.006 352.223 509.743 352.789 509.422L348.629 489.712L351.451 489.116L356.026 510.779Z' fill='white'/%3E%3Cpath d='M365.163 484.498C366.394 484.053 367.699 483.851 369.007 483.901C370.057 483.953 371.079 484.256 371.988 484.783C372.864 485.315 373.612 486.032 374.18 486.884C374.814 487.831 375.313 488.861 375.663 489.945L380.214 503.675C379.849 503.921 379.472 504.148 379.084 504.355C378.583 504.63 378 504.94 377.335 505.285C376.67 505.63 375.921 505.979 375.089 506.333C374.255 506.687 373.388 507.013 372.489 507.311C371.421 507.676 370.31 507.903 369.184 507.986C368.194 508.063 367.2 507.94 366.259 507.624C365.352 507.308 364.534 506.777 363.876 506.076C363.115 505.233 362.551 504.23 362.225 503.142C361.847 502.1 361.734 500.982 361.894 499.886C362.063 498.895 362.477 497.962 363.098 497.172C363.792 496.301 364.643 495.568 365.606 495.009C366.723 494.349 367.91 493.814 369.145 493.415C369.538 493.285 369.959 493.169 370.407 493.066C370.857 492.964 371.297 492.882 371.727 492.816C372.158 492.75 372.533 492.706 372.851 492.678C373.074 492.651 373.3 492.647 373.524 492.664L373.077 491.317C372.832 490.576 372.531 489.856 372.175 489.162C371.843 488.505 371.373 487.927 370.796 487.469C370.196 487.007 369.485 486.71 368.735 486.609C367.755 486.507 366.766 486.635 365.844 486.984C364.628 487.341 363.462 487.853 362.376 488.508C361.664 488.993 361.149 489.366 360.831 489.628L359.656 487.353C360.269 486.824 360.94 486.366 361.656 485.988C362.774 485.38 363.949 484.881 365.163 484.498ZM372.145 504.714C373.211 504.36 374.133 504.016 374.911 503.68C375.578 503.399 376.23 503.082 376.862 502.729L374.321 495.064C373.781 495.03 373.238 495.046 372.701 495.111C371.726 495.238 370.769 495.47 369.844 495.801C369.14 496.037 368.453 496.319 367.787 496.646C367.112 496.971 366.499 497.412 365.975 497.948C365.473 498.461 365.104 499.089 364.899 499.777C364.697 500.583 364.749 501.431 365.049 502.205C365.263 502.921 365.633 503.581 366.133 504.136C366.565 504.596 367.112 504.932 367.717 505.107C368.373 505.286 369.056 505.337 369.731 505.258C370.553 505.166 371.362 504.983 372.145 504.714Z' fill='white'/%3E%3Cpath d='M395.032 498.734C394.23 499.054 393.389 499.266 392.531 499.365C391.831 499.445 391.122 499.362 390.459 499.121C389.8 498.862 389.215 498.446 388.754 497.908C388.161 497.198 387.69 496.396 387.358 495.533L376.457 469.312L378.916 467.712L389.988 494.343C390.193 494.882 390.476 495.387 390.828 495.844C391.075 496.16 391.401 496.405 391.773 496.557C392.149 496.69 392.553 496.729 392.948 496.668C393.465 496.599 393.977 496.498 394.481 496.368L395.032 498.734Z' fill='white'/%3E%3Cpath d='M392.164 466.68C392.309 466.941 392.397 467.23 392.423 467.528C392.45 467.825 392.414 468.125 392.318 468.408C392.12 468.933 391.73 469.362 391.226 469.609C390.722 469.855 390.143 469.9 389.608 469.734C389.053 469.51 388.601 469.089 388.338 468.552C388.076 468.015 388.021 467.4 388.184 466.825C388.382 466.3 388.772 465.87 389.276 465.624C389.78 465.377 390.358 465.332 390.894 465.498C391.176 465.596 391.435 465.752 391.654 465.955C391.872 466.159 392.046 466.406 392.164 466.68ZM404.692 493.794L402.101 495.062L392.018 474.457L394.608 473.19L404.692 493.794Z' fill='white'/%3E%3Cpath d='M404.706 467.928L412.657 463.42L413.86 465.543L405.909 470.052L411.927 480.666C412.431 481.607 413.055 482.48 413.782 483.261C414.266 483.788 414.87 484.189 415.542 484.431C416.11 484.613 416.719 484.623 417.293 484.459C417.924 484.278 418.532 484.019 419.1 483.689C419.981 483.229 420.774 482.615 421.44 481.878C421.851 481.397 422.227 480.886 422.563 480.349L424.363 482.083C423.954 482.757 423.47 483.382 422.92 483.947C422.144 484.787 421.24 485.498 420.24 486.054C419.2 486.682 418.055 487.116 416.86 487.334C415.901 487.494 414.917 487.38 414.02 487.005C413.074 486.581 412.237 485.949 411.569 485.156C410.698 484.138 409.934 483.032 409.289 481.858L398.872 463.485L401.118 461.599L404.706 467.928Z' fill='white'/%3E%3Cpath d='M418.248 451.448C418.423 451.672 418.55 451.93 418.623 452.206C418.695 452.481 418.71 452.768 418.668 453.05C418.556 453.582 418.246 454.051 417.801 454.364C417.356 454.676 416.81 454.808 416.271 454.733C415.719 454.593 415.235 454.26 414.907 453.793C414.58 453.327 414.431 452.759 414.487 452.192C414.599 451.66 414.909 451.19 415.353 450.878C415.798 450.566 416.345 450.433 416.883 450.508C417.162 450.564 417.427 450.676 417.662 450.838C417.896 450.999 418.096 451.207 418.248 451.448ZM422.79 456.065C423.842 455.284 425.034 454.714 426.302 454.385C427.322 454.133 428.387 454.129 429.409 454.372C430.401 454.628 431.324 455.1 432.114 455.753C432.993 456.477 433.768 457.32 434.415 458.257L442.726 470.097C442.447 470.437 442.151 470.763 441.839 471.073C441.439 471.48 440.97 471.945 440.433 472.467C439.895 472.989 439.279 473.539 438.583 474.118C437.887 474.697 437.152 475.258 436.377 475.802C435.459 476.46 434.461 476.998 433.406 477.402C432.481 477.761 431.493 477.929 430.501 477.897C429.541 477.856 428.605 477.583 427.774 477.102C426.801 476.513 425.972 475.715 425.347 474.766C424.686 473.877 424.255 472.839 424.093 471.743C423.97 470.746 424.097 469.734 424.464 468.798C424.878 467.764 425.482 466.817 426.244 466.004C427.123 465.05 428.106 464.197 429.174 463.459C429.512 463.221 429.881 462.988 430.282 462.762C430.683 462.535 431.08 462.328 431.474 462.142C431.867 461.956 432.213 461.804 432.509 461.686C432.715 461.596 432.93 461.527 433.149 461.48L432.334 460.32C431.886 459.681 431.39 459.077 430.849 458.515C430.342 457.982 429.725 457.564 429.041 457.291C428.334 457.021 427.568 456.942 426.82 457.062C425.852 457.246 424.941 457.653 424.158 458.252C423.097 458.945 422.129 459.771 421.278 460.71C420.737 461.38 420.351 461.886 420.121 462.228L418.341 460.388C418.776 459.704 419.287 459.073 419.864 458.504C420.76 457.6 421.74 456.783 422.79 456.065ZM424.494 447.062C424.669 447.287 424.796 447.545 424.868 447.82C424.94 448.096 424.956 448.383 424.913 448.665C424.801 449.196 424.491 449.666 424.047 449.978C423.602 450.29 423.055 450.422 422.517 450.348C421.965 450.208 421.48 449.875 421.153 449.408C420.825 448.942 420.676 448.373 420.732 447.806C420.844 447.274 421.154 446.805 421.599 446.492C422.044 446.18 422.591 446.048 423.129 446.123C423.408 446.179 423.673 446.291 423.908 446.453C424.142 446.614 424.342 446.822 424.494 447.062ZM435.298 473.415C436.217 472.769 437.001 472.174 437.649 471.628C438.207 471.166 438.74 470.675 439.244 470.156L434.604 463.547C434.077 463.67 433.562 463.841 433.066 464.058C432.17 464.461 431.319 464.958 430.528 465.542C429.923 465.97 429.346 466.437 428.802 466.942C428.249 467.447 427.789 468.046 427.442 468.71C427.109 469.346 426.936 470.054 426.938 470.772C426.977 471.601 427.272 472.397 427.781 473.052C428.192 473.677 428.737 474.202 429.376 474.59C429.921 474.906 430.541 475.07 431.171 475.063C431.85 475.046 432.52 474.898 433.143 474.628C433.903 474.304 434.626 473.897 435.298 473.415Z' fill='white'/%3E%3Cpath d='M437.936 445.344L444.88 439.4L446.468 441.254L439.523 447.197L447.457 456.467C448.131 457.295 448.909 458.033 449.772 458.661C450.347 459.086 451.017 459.365 451.723 459.474C452.315 459.544 452.915 459.437 453.446 459.167C454.032 458.868 454.579 458.498 455.074 458.066C455.851 457.446 456.511 456.693 457.024 455.842C457.337 455.291 457.608 454.718 457.835 454.126L459.932 455.486C459.659 456.226 459.304 456.932 458.872 457.591C458.27 458.565 457.517 459.436 456.641 460.172C455.74 460.986 454.698 461.631 453.567 462.073C452.657 462.413 451.669 462.489 450.718 462.292C449.708 462.055 448.765 461.595 447.958 460.945C446.909 460.111 445.948 459.172 445.091 458.142L431.358 442.096L433.204 439.816L437.936 445.344Z' fill='white'/%3E%3Cpath d='M486.005 428.624C485.561 429.664 485.049 430.674 484.474 431.648C483.595 433.098 482.578 434.46 481.439 435.715C480.421 436.909 479.184 437.897 477.795 438.627C476.516 439.29 475.109 439.667 473.67 439.731C472.181 439.785 470.698 439.529 469.313 438.98C467.728 438.347 466.268 437.437 465.002 436.292C463.765 435.23 462.697 433.985 461.835 432.601C461.068 431.375 460.552 430.009 460.315 428.582C460.099 427.215 460.194 425.816 460.595 424.492C461.051 423.043 461.816 421.71 462.839 420.587C463.698 419.562 464.74 418.705 465.911 418.058C466.7 417.611 467.545 417.27 468.423 417.044L459.148 408.912L460.649 406.392L486.005 428.624ZM470.525 418.887C470.132 418.968 469.745 419.072 469.365 419.199C468.875 419.365 468.4 419.569 467.943 419.811C467.41 420.092 466.901 420.414 466.419 420.776C465.894 421.17 465.412 421.618 464.981 422.112C464.137 423.014 463.524 424.106 463.194 425.296C462.938 426.307 462.932 427.364 463.177 428.378C463.446 429.434 463.917 430.428 464.563 431.306C465.276 432.292 466.101 433.192 467.02 433.989C469.289 435.978 471.526 436.937 473.733 436.866C475.94 436.794 477.862 435.824 479.499 433.956C480.27 433.102 480.978 432.194 481.617 431.238C481.991 430.678 482.32 430.088 482.601 429.476L470.525 418.887Z' fill='white'/%3E%3Cpath d='M482.595 415.87C481.096 414.888 479.791 413.64 478.744 412.186C477.892 410.985 477.276 409.632 476.929 408.201C476.626 406.92 476.611 405.587 476.884 404.299C477.148 403.056 477.654 401.876 478.372 400.828C479.959 398.508 481.981 397.176 484.439 396.834C486.896 396.492 489.7 397.398 492.848 399.552C493.044 399.686 493.235 399.825 493.422 399.971C493.608 400.118 493.779 400.261 493.933 400.402L484.837 413.693C487.206 415.208 489.381 415.854 491.36 415.631C493.34 415.408 495.132 414.125 496.737 411.783C497.48 410.767 498.066 409.646 498.475 408.456C498.691 407.778 498.86 407.085 498.98 406.383L501.331 407.347C501.208 408.166 501.001 408.97 500.712 409.747C500.258 411.024 499.63 412.232 498.846 413.336C497.891 414.812 496.654 416.085 495.206 417.083C493.999 417.89 492.618 418.4 491.176 418.572C489.737 418.723 488.283 418.553 486.918 418.076C485.382 417.544 483.927 416.801 482.595 415.87ZM490.29 401.404C488.279 400.1 486.424 399.511 484.725 399.638C483.025 399.764 481.624 400.633 480.521 402.244C479.964 403.028 479.603 403.933 479.467 404.884C479.35 405.786 479.408 406.702 479.638 407.581C479.877 408.493 480.282 409.353 480.831 410.119C481.402 410.925 482.091 411.64 482.874 412.242L490.29 401.404Z' fill='white'/%3E%3Cpath d='M491.094 380.566C491.535 379.782 492.042 379.037 492.611 378.34C492.979 377.861 493.398 377.423 493.861 377.034L495.739 378.762C495.352 379.077 495.003 379.435 494.699 379.83C494.102 380.58 493.571 381.38 493.113 382.221C492.598 383.084 492.18 384.002 491.868 384.958C491.705 385.45 491.589 385.956 491.521 386.47L509.006 396.384L507.583 398.892L488.555 388.103C488.688 387.037 488.902 385.982 489.195 384.948C489.641 383.413 490.28 381.941 491.094 380.566Z' fill='white'/%3E%3Cpath d='M525.946 353.382L528.386 354.327L522.073 370.629L493.4 359.526L494.489 356.712L520.722 366.872L525.946 353.382Z' fill='white'/%3E%3Cpath d='M534.411 330.403C534.421 331.294 534.384 332.477 534.3 333.954C534.164 335.734 533.853 337.496 533.371 339.215C533.039 340.649 532.416 341.999 531.543 343.184C530.818 344.129 529.864 344.872 528.77 345.344C527.627 345.81 526.396 346.025 525.162 345.975C523.715 345.926 522.279 345.709 520.882 345.327L508.442 342.043L509.178 339.255L520.718 342.301C522.051 342.675 523.418 342.913 524.798 343.01C525.795 343.092 526.797 342.949 527.731 342.592C528.535 342.258 529.224 341.699 529.717 340.982C530.293 340.107 530.712 339.138 530.954 338.119C531.268 336.974 531.499 335.808 531.645 334.63C531.745 333.987 531.779 333.334 531.746 332.684L512.269 327.543L513.005 324.754L534.411 330.403Z' fill='white'/%3E%3Cpath d='M504.743 306.596C504.894 305.586 505.163 304.597 505.543 303.649C505.735 303.144 505.991 302.667 506.306 302.227L508.657 303.217C508.386 303.644 508.15 304.093 507.953 304.559C507.642 305.31 507.423 306.097 507.302 306.901C506.955 308.912 507.218 310.436 508.091 311.472C508.963 312.508 510.522 313.219 512.766 313.604L515.126 314.011L516.692 304.916L519.097 305.33L517.531 314.425L537.731 317.903L537.242 320.745L512.187 316.432C509.243 315.925 507.144 314.866 505.89 313.255C504.636 311.644 504.254 309.424 504.743 306.596Z' fill='white'/%3E%3Cpath d='M517.515 296.971L518.381 287.872L520.81 288.103L519.945 297.202L532.091 298.358C533.152 298.485 534.224 298.475 535.281 298.327C535.99 298.233 536.665 297.968 537.249 297.556C537.724 297.195 538.081 296.702 538.275 296.138C538.489 295.517 538.625 294.871 538.681 294.216C538.809 293.23 538.761 292.23 538.539 291.261C538.381 290.648 538.177 290.047 537.93 289.464L540.383 288.984C540.7 289.706 540.934 290.461 541.082 291.235C541.325 292.353 541.389 293.502 541.27 294.64C541.188 295.852 540.887 297.039 540.38 298.143C539.961 299.02 539.304 299.761 538.483 300.28C537.593 300.811 536.595 301.135 535.563 301.228C534.229 301.357 532.886 301.348 531.554 301.203L510.529 299.203L510.272 296.283L517.515 296.971Z' fill='white'/%3E%3C/svg%3E%0A");
+      @media screen and (min-width:768px) {
+        right: 2.125rem;
+      }
+    }
+  }
+  img{
+    max-height: 600px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.site-main{
+  margin-top: 74px;
+  position: relative;
+  @media screen and (min-width: 768px){
+    margin-top: 94px;
+  }
+}
+.container{
+  &.w100{
+    max-width: 100%;
+    width: 100%;
+  }
+}
+.blur-up {
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  transition: filter .4s;
+  &.lazyloaded {
+    filter: blur(0);
+    -webkit-filter: blur(0);
+  }
+}
+ol, ul {
+  list-style: disc;
+  margin-left: 20px;
+  li{
+    margin-bottom: .575rem;
+  }
+}
+.post-content{
+  a{
+    color: $green50;
+    transition: all .3s ease;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  h2{
+    line-height: 1.25;
+    margin-bottom: 1.188rem;
+    font-size: 1.25rem;
+    color: $green50;
+    font-weight: 500;
+    @media screen and (min-width:768px) {
+      font-size: 1.75rem;
+    }
+    @media screen and (min-width:1024px) {
+      font-size: 2.25rem;
+      margin-bottom: 2.188rem;
+    }
+  }
+}
+b,strong{
+  font-weight: 500;
+}
+p{
+  margin-bottom: 1rem;
+}
+
+a.text-link{
+  position: relative;
+  padding: 4px 0;
+  display: inline-block;
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    padding-bottom: 2px;
+    max-width: 0;
+    height: 2px;
+    background: #00A3C3;
+    content: '';
+    transition: max-width 0.2s;
+  }
+  &:hover{
+    &::before{
+      max-width:100%;
+    }
+  }
+}
+.produktlogos{
+  img{
+    max-width: 100%;
+    height: 100%;
+    max-height: 25px;
+    object-fit: contain;
+    @media screen and (min-width:768px) {
+      max-height: 55px;
+    }
+  }
+  figure{
+    position: relative;
+    padding: 0 .825rem;
+    @media screen and (min-width:768px) {
+      padding: 1rem;
+    }
+    &:before{
+      top: 0;
+      transform-origin: right center;
+    }
+    &:after{
+      bottom: 0;
+    }
+    &:before,&:after{
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      transform: scaleX(0);
+      content: "";
+      display: block;
+      transition: transform 0.3s;
+      background-color: $c_blue400;
+      border-radius: 3px;
+    }
+    &:hover{
+      &:before,&:after{
+        transform: scaleX(1);
+      }
+      &:before{
+        transform-origin: left center;
+      }
+    }
+  }
+}
+.box-person{
+  max-height: 21.5rem;
+  height: 21.5rem;
+  @media screen and (min-width:768px) {
+    max-height: 22.5rem;
+    height: 22.5rem;
+  }
+}
+.article_karriere{
+  min-height: auto;
+  height: 100%;
+  @media screen and (min-width:768px) {
+    min-height: 13.25rem;
+  }
+  @media screen and (min-width:1024px) {
+    min-height: 16.25rem;
+  }
+}
+.single{
+  .post-content{
+    li{
+      color: $c_black;
+    }
+    h3{
+      font-size: 1.5rem;
+      margin-bottom: 2.188rem;
+      line-height: 2rem;
+    }
+    h4{
+      margin-bottom: 15px;
+      color: $c_black;
+    }
+    p,ul{
+      margin-bottom: 1.25rem;
+      @media screen and (min-width:768px) {
+        margin-bottom: 2.188rem;
+      }
+    }
+    li{
+      margin-bottom: 0px;
+    }
+  }
+}
+.single-product{
+  li{
+    color: $c_black;
+  }
+  h3{
+    font-size: 1.5rem;
+    margin-bottom: 2.188rem;
+    line-height: 2rem;
+  }
+  h4{
+    margin-bottom: 15px;
+    color: $c_black;
+  }
+  p,ul{
+    margin-bottom: 1.25rem;
+  }
+  li{
+    margin-bottom: 0px;
+  }
+}
+.single-karriere{
+  .info_contacts{
+    p{
+      margin-bottom: 20px;
+    }
+  }
+}
+.page-template-tpl-innerText{
+  li{
+    margin-bottom: 0px;
+  }
+  .post-content{
+    *{
+      margin-bottom: 1rem;
+    }
+  }
+}
+form{
+  input[type="radio"]:checked + p{
+    background: rgba(0,163,195,.3);
+  }
+  label{
+    .caret{
+      transition: all .2s ease;
+      vertical-align: middle;
+      &.open{
+        top: 0;
+        transform: rotate(-30deg);
+
+      }
+    }
+  }
+}
+.preloader-speeding-wheel{
+  width: 49px;
+  height: 49px;
+  margin: 0 auto;
+  border: 3px solid $c_blue400;
+  display: inline-block;
+  border-radius: 50%;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation: cssload-spin 575ms infinite linear;
+}
+.wrap_404{
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.presse-block{
+  .card-image{
+    flex: 0 0 100%;
+    max-width: 280px;
+    @media screen and (min-width:768px) {
+      flex: 0 0 40%;
+      max-width: 40%;
+    }
+  }
+  .card-body{
+    flex: 0 0 100%;
+    max-width: 100%;
+    @media screen and (min-width:768px) {
+      flex: 0 0 60%;
+      max-width: 60%;
+    }
+  }
+}
+form.wpcf7-form{
+  .captchac{
+    input[type="text"]{
+      width: 150px;
+    }
+  }
+
+
+  //input
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="password"],
+  input[type="search"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="range"],
+  input[type="date"],
+  input[type="month"],
+  input[type="week"],
+  input[type="time"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="color"],
+  textarea,
+  .wysiwyg-editor {
+    background: rgba(237, 240, 242, 0.5);
+    border-radius: 3px;
+    border: 1px solid rgba(237, 240, 242, 0.5);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.25;
+    color: $c_black;
+    padding: 10px 10px;
+    width: 100%;
+    @media screen and (min-width:1024px) {
+      padding: 14px 15px;
+    }
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  input[type=number] {
+    -moz-appearance:textfield;
+  }
+
+  input.has-error,
+  textarea.has-error,
+  .has-error .select2-selection--single {
+    border: 1px solid red !important;
+  }
+
+  button,
+  input[type="button"],
+  input[type="submit"] {
+    font-style: normal;
+    border: none;
+    font-weight: 500;
+    background: transparent;
+    font-size: 21px;
+    line-height: 24px;
+    color: $green50;
+    transition: 0.25s;
+    margin-left: 0;
+    margin-top: 25px;
+    cursor: pointer;
+    @media screen and (min-width:768px) {
+      margin-left: 25px;
+      margin-top: 0;
+    }
+  }
+
+  button:active,
+  button:focus,
+  button:hover,
+  input[type="button"]:hover,
+  input[type="button"]:active,
+  input[type="button"]:focus,
+  input[type="submit"]:active,
+  input[type="submit"]:hover,
+  input[type="submit"]:focus {
+    color: $c_blue400;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  input[type="number"]:focus,
+  input[type="tel"]:focus,
+  input[type="range"]:focus,
+  input[type="date"]:focus,
+  input[type="month"]:focus,
+  input[type="week"]:focus,
+  input[type="time"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="color"]:focus,
+  textarea:focus {
+    outline: none;
+    border: 1px solid rgba(237, 240, 242, 1);
+  }
+
+  .flex{
+    .left, .right{
+      flex: 0 0 100%;
+      max-width: 100%;
+      @media screen and (min-width:768px) {
+        flex: 0 0 50%;
+        max-width: 48%;
+      }
+    }
+  }
+  label{
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 20px;
+    color: #475D63;
+  }
+}
+.contact-form{
+  .wrap-form{
+    flex: 0 0 100%;
+    max-width: 100%;
+    @media screen and (min-width:768px) {
+      flex: 0 0 70%;
+      max-width: 70%;
+    }
+  }
+  .wrap-information{
+    flex: 0 0 100%;
+    max-width: 100%;
+    @media screen and (min-width:768px) {
+      flex: 0 0 30%;
+      max-width: 30%;
+    }
+    h3{
+      color: $c_black;
+      font-size: 18px;
+      margin-bottom: 15px;
+      @media screen and (min-width:768px) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
+.map-block{
+  iframe{
+    width: 100%;
+  }
+}
+
+.woocommerce ul.products{
+  display: block;
+  width: 100%;
+  @media screen and (min-width:640px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  li.product{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+    width: 100%!important;
+    max-width: 100%;
+    flex: 0 0 100%;
+    float: none;
+    clear: both;
+    margin: 0 0 2.992em;
+    margin-bottom: 1.813rem!important;
+    @media screen and (min-width:640px) {
+      max-width: 50%;
+      flex: 0 0 50%;
+    }
+    &:nth-child(even) {
+      padding-left: 0;
+      @media screen and (min-width:640px) {
+        padding-left: 17px;
+      }
+    }
+    &:nth-child(odd) {
+      padding-right: 0;
+      @media screen and (min-width:640px) {
+        padding-right: 17px;
+      }
+    }
+    a{
+      display: flex;
+      flex-wrap: wrap;
+      z-index: 2;
+      background-color: rgba(237,240,242,.5);
+      border-radius: 3px;
+      &:before{
+        background-size: contain;
+        background-position: left;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%0A%3Csvg width='375' height='359' viewBox='0 0 375 359' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.75' clip-path='url(%23clip0_11:1427)'%3E%3Cpath d='M265.188 166.612C265.188 221.169 221 265.465 166.438 265.465C111.937 265.465 67.6875 221.231 67.6875 166.612C67.6875 112.055 111.875 67.7583 166.438 67.7583C220.937 67.7583 265.188 112.055 265.188 166.612ZM282.625 301.002C282.625 281.982 298 266.591 317 266.591C336 266.591 351.375 281.982 351.375 301.002C351.375 320.022 336 335.413 317 335.413C298 335.413 282.625 319.959 282.625 301.002ZM317 242.941C316.062 242.941 315.125 243.066 314.188 243.066C326.062 220.167 332.875 194.203 332.875 166.612C332.875 74.5779 258.375 0 166.438 0C74.5 0 0 74.5779 0 166.612C0 258.645 74.5 333.223 166.438 333.223C200.812 333.223 232.75 322.775 259.25 304.944C261.312 335.163 286.375 359 317.062 359C349.062 359 375.062 333.035 375.062 300.939C375 268.906 349.062 242.941 317 242.941Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_11:1427'%3E%3Crect width='375' height='359' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+        position: absolute;
+        top: 26px;
+        left: -50px;
+        bottom: 26px;
+        right: 0;
+        z-index: 1;
+      }
+      &:hover{
+        &:before{
+          content: none;
+          @media screen and (min-width: 1024px) {
+            content: '';
+          }
+        }
+      }
+    }
+    .loop_image{
+      max-width: 200px;
+      margin: 0 auto;
+      @media screen and (min-width:640px) {
+        max-width: 100%;
+      }
+    }
+  }
+  .woocommerce-loop-product__title{
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 1.25;
+    color: #488394;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  .woocommerce-loop-product__desc{
+    font-style: normal;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.25;
+    color: #000000;
+  }
+  .wrap-loop-title{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .wc-sku{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.33;
+    color: #000000;
+    p{
+      margin-bottom: 10px;
+    }
+  }
+  .wc-price{
+    p{
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.25;
+      color: #000000;
+      margin-bottom: 0;
+    }
+    .price{
+      font-size:  24px!important;
+      line-height: 1.25;
+      color: #000000!important;
+      font-weight: bold!important;
+      del{
+        font-size: 14px;
+      }
+    }
+  }
+  .wrap-loop{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+.woocommerce-shop-header{
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    @media screen and (min-width:768px) {
+      margin-top: 75px;
+      margin-bottom: 75px;
+    }
+  }
+}
+.woocommerce div.product div.images,
+.woocommerce-page div.product div.images{
+
+  float: none!important;
+  width: 100%!important;
+  margin: 0 auto;
+}
+.woocommerce div.product div.summary,
+.woocommerce-page div.product div.summary{
+  float: none!important;
+  width: 100%!important;
+}
+
+//product gallery
+.woocommerce-product-gallery{
+  display: block;
+  max-width: 100%;
+  position: initial!important;
+  @media screen and (min-width:992px) {
+    width: 100%!important;
+    margin: 0 auto;
+    height: 100%!important;
+    max-width: 635px;
+    max-height: 635px;
+  }
+  img{
+    width: 100%!important;
+    object-fit: contain;
+    margin: 0 auto;
+    height: 100%!important;
+    max-width: 635px;
+    max-height: 635px;
+  }
+  .flex-viewport{
+    filter: drop-shadow(0px 4px 50px rgba(0, 0, 0, 0.1));
+    border-radius: 5px;
+    margin-left: 16px;
+    margin-right: 16px;
+    @media screen and (min-width:992px) {
+      width: 100%!important;
+      margin: 0 auto;
+      height: 100%!important;
+      max-width: 635px;
+      max-height: 635px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  .flex-control-nav{
+      max-width: 100%;
+      width: 100%;
+      position: relative;
+      right: auto;
+      overflow: hidden;
+      margin-top: 30px!important;
+      top: auto;
+      height: 100%;
+      background-color: #EDF0F2;
+      padding: 11px 11px 11px 11px!important;
+      @media screen and (min-width:992px) {
+        max-width: 135px;
+        position: absolute;
+        right: 16px;
+        top: 0;
+        margin-top: 0!important;
+      }
+      &.has-arrows{
+        @media screen and (min-width:992px) {
+          padding: 21px 11px 21px 11px!important;
+        }
+        .slick-slide {
+          @media screen and (min-width: 992px) {
+            height: 110px;
+          }
+        }
+      }
+      .slick-slide{
+        display: block;
+        margin: 5px!important;
+        //border-width: 4px;
+        //border-style: solid;
+        //border-radius: 3px;
+        @media screen and (min-width:992px) {
+          height: 115px;
+          margin: 5px 0!important;
+        }
+        .flex-active{
+          border-color:  $c_blue400;
+          border-width: 4px;
+          border-style: solid;
+          border-radius: 3px;
+        }
+        &.slick-current{
+         // border-color:  $c_blue400;
+        }
+        img{
+          opacity: 1!important;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .slick-list {
+        margin: -5px 15px;
+        @media screen and (min-width:992px) {
+          margin: -5px 0;
+        }
+      }
+      .slick-prev, .slick-next{
+        position: absolute;
+        margin: 0 auto;
+        z-index: 2;
+      }
+      .slick-prev{
+        top: 50%;
+        left: 5px;
+        right: auto;
+        @media screen and (min-width:992px) {
+          top: 5px;
+          left: 0;
+          right: 0;
+        }
+        &:before{
+          content: "";
+          width: 0;
+          height: 0;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-right:10px solid $c_blue400;
+          display: block;
+          @media screen and (min-width:992px) {
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid $c_blue400;
+          }
+        }
+      }
+      .slick-next{
+        top: 50%;
+        right: 2px;
+        left: auto;
+        @media screen and (min-width:992px) {
+          top: calc(100% - 5px);
+          right: 0;
+          left: 0;
+        }
+        &:before{
+          content: "";
+          width: 0;
+          height: 0;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-left: 10px solid $c_blue400;
+          display: block;
+          @media screen and (min-width:992px) {
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid $c_blue400;
+          }
+        }
+      }
+    }
+}
+.woocommerce div.product .woocommerce-product-gallery--columns-4 .flex-control-thumbs li:nth-child(4n+1) {
+  clear: none!important;
+}
+
+.product_info{
+  .go_back{
+    flex: 0 0 100;
+    max-width: 100%;
+    @media screen and (min-width:992px) {
+      flex: 0 0 24%;
+      max-width: 24%;
+    }
+  }
+  .short_desc{
+    flex: 0 0 100;
+    max-width: 100%;
+    @media screen and (min-width:992px) {
+      flex: 0 0 61.4%;
+      max-width: 61.4%;
+    }
+    @media screen and (min-width:1200px) {
+      flex: 0 0 64.4%;
+      max-width: 64.4%;
+    }
+    .woocommerce-product-details__short-description{
+      max-width: 100%;
+      width: 100%;
+      @media screen and (min-width:992px) {
+        max-width: 635px;
+        width: 100%;
+      }
+    }
+  }
+  .link_download{
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    @media screen and (min-width:992px) {
+      display: block;
+      flex: 0 0 14.6%;
+      max-width: 14.6%;
+    }
+    @media screen and (min-width:1200px) {
+      flex: 0 0 11.6%;
+      max-width: 11.6%;
+    }
+    a{
+      &:nth-child(even) {
+        margin-left: 5px;
+        @media screen and (min-width:992px) {
+          margin-left: 0;
+        }
+      }
+      &:nth-child(odd) {
+        margin-right: 5px;
+        @media screen and (min-width:992px) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+.single{
+  &.woocommerce{
+    div.product{
+      div.summary{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        flex: 0 0 100%;
+        max-width: 100%;
+        @media screen and (min-width:992px) {
+          flex: 0 0 24%;
+          max-width: 24%;
+        }
+      }
+      .tabs_content{
+        flex: 0 0 100%;
+        max-width: 100%;
+        @media screen and (min-width:992px) {
+          flex: 0 0 76%;
+          max-width: 630px;
+        }
+      }
+      .product_meta{
+        margin-bottom: 1rem;
+      }
+      .product_meta,
+      .wc-price {
+        p{
+          font-weight: 300;
+          margin-bottom: 0;
+          font-size: 18px;
+          color: #000000;
+          font-style: normal;
+          line-height: 1.25;
+        }
+        p.price{
+          font-weight: 500;
+          font-size: 21px;
+          del{
+            font-size: 14px;
+          }
+        }
+      }
+      .woocommerce-tabs{
+        ul.tabs{
+          padding: 0;
+          margin-bottom: 2.5rem;
+          @media screen and (min-width:992px) {
+            margin-bottom: 3.438rem;
+          }
+          li{
+            border: none;
+            background-color: transparent;
+            display: inline-block;
+            position: relative;
+            z-index: 0;
+            border-radius: 0;
+            margin: 0;
+            margin-bottom: 1rem;
+            padding: 0;
+            margin-right: 2rem;
+            &:after{
+              content: none;
+            }
+            &.active{
+              border-bottom: 2px solid $green50;
+            }
+            a{
+              color: $green50;
+              font-weight: 500;
+              font-size: 18px;
+              line-height: 1;
+              padding: 0;
+              padding-bottom: 10px;
+              @media screen and (min-width:992px) {
+                font-size: 21px;
+              }
+            }
+          }
+          &:before{
+            content: none;
+            border: none;
+          }
+        }
+        h2,h3,h4,p{
+          font-size: 1rem;
+          margin-bottom: 1rem;
+          line-height: 1.25;
+          color: $c_black;
+          @media screen and (min-width:992px) {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+          }
+        }
+        li{
+          font-size: 1rem;
+          line-height: 1.25;
+          color: $c_black;
+          @media screen and (min-width:992px) {
+            font-size: 1.125rem;
+          }
+        }
+        p,li{
+          font-weight: 300;
+        }
+        h2,h3,h4{
+          font-weight: 500;
+        }
+        video, iframe{
+          max-width: 100%;
+          width: 100%;
+          height: 220px;
+          margin-bottom: 1rem;
+          @media screen and (min-width:768px) {
+            height: 330px;
+          }
+        }
+        table{
+
+          th,td{
+            background: none!important;
+            font-size: 0.875rem;
+            @media screen and (min-width:768px) {
+              font-size: 1.125rem;
+            }
+          }
+          .attribute_name_values{
+            font-size: .875rem;
+            @media screen and (min-width:992px) {
+              font-size: 1rem;
+            }
+          }
+          td.attribute_value{
+            width: 35%;
+          }
+          p{
+            margin-bottom: 0;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 1;
+            font-style: normal;
+            @media screen and (min-width:992px) {
+              font-size: 18px;
+            }
+          }
+          &.shop_attributes{
+            border-top: 0;
+            th{
+              font-weight: 500;
+              font-style: normal;
+              width: 55%;
+              text-align: left;
+              padding: 0;
+            }
+            td{
+              font-style: normal;
+              font-weight: 300;
+            }
+          }
+        }
+        .panel{
+          &.woocommerce-Tabs-panel--uberblick{
+            table{
+              color: $c_black;
+              font-weight: 300;
+              margin-bottom: 1rem;
+              font-size: 11px;
+              line-height: 1.35;
+              @media screen and (min-width:768px) {
+                font-size: 18px;
+              }
+            }
+          }
+          .shop_attributes tr.alt,
+          .shop_attributes tr.alt td{
+            background-color: transparent!important;
+          }
+          .shop_attributes tr,
+          .shop_attributes tr td {
+            border-bottom: 1px dashed #94A5B0;
+          }
+          tr.attribute_row{
+            border-bottom: none;
+            > td{
+              border-bottom: none;
+            }
+          }
+
+        }
+      }
+
+    }
+  }
+}
+.tax-product_cat,.tax-produktmarke{
+  .card img{
+    height: 100%!important;
+  }
+}
+
+@keyframes cssload-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
